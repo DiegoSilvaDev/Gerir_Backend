@@ -10,6 +10,7 @@ namespace Senai.Gerir.Api.Dominios
         public Usuario()
         {
             Tarefas = new HashSet<Tarefa>();
+            Id = Guid.NewGuid();
         }
 
         public Guid Id { get; set; }
