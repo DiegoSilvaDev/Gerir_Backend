@@ -75,8 +75,11 @@ namespace Senai.Gerir.Api.Repositorios
                 usuarioexiste.Nome = usuario.Nome;
                 usuarioexiste.Senha = usuario.Senha;
 
-                if (!string.IsNullOrEmpty(usuario.Senha));
+                if (!string.IsNullOrEmpty(usuario.Senha))
+                {
+
                 usuarioexiste.Senha = usuario.Senha;
+                }
 
                 _context.Usuarios.Update(usuarioexiste);
                 _context.SaveChanges();

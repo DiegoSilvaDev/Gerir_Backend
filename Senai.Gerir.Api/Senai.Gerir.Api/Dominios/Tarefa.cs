@@ -7,6 +7,11 @@ namespace Senai.Gerir.Api.Dominios
 {
     public partial class Tarefa
     {
+        public Tarefa()
+        {
+
+            Id = Guid.NewGuid();
+        }
         public Guid Id { get; set; }
         public string Titulo { get; set; }
         public string Descricao { get; set; }
