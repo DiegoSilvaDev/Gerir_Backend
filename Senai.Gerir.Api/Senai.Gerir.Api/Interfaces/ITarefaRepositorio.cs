@@ -20,7 +20,7 @@ namespace Senai.Gerir.Api.Interfaces
         /// Utilizado para listar as tarefas existentes independente de seu status
         /// </summary>
         /// <param name="idUsuario">id dos usuários</param>
-        /// <returns>Retorna todas as tarefas existentes</returns>
+        /// <returns>Retorna todas as tarefas existentes em lista</returns>
         List<Tarefa> ListarTodas(Guid idUsuario);
 
         /// <summary>

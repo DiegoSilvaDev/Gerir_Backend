@@ -11,6 +11,7 @@ namespace Senai.Gerir.Api.Dominios
         {
 
             Id = Guid.NewGuid();
+            Status = false;
         }
         public Guid Id { get; set; }
         public string Titulo { get; set; }

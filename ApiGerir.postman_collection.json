@@ -1,0 +1,369 @@
+{
+	"info": {
+		"_postman_id": "b4c7f076-fae7-4fae-b5ff-3260454b3101",
+		"name": "ApiGerir",
+		"description": "Documentação da Api Gerir",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Post - api/Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\" : \"Fernando\",\r\n    \"email\" : \"Fernando@gmail.com\",\r\n    \"senha\" : \"123456\",\r\n    \"tipo\" : \"Comun\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/usuario",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuario"
+							]
+						},
+						"description": "Cadastra um novo usuário"
+					},
+					"response": []
+				},
+				{
+					"name": "Post - Api/Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"test@gmail.com\",\r\n    \"senha\" : \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/usuario/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuario",
+								"login"
+							]
+						},
+						"description": "Efetua o login\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Get - Api/Usuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put - Api/Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmYW1pbHlfbmFtZSI6InRlc3QiLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQ29tdW4iLCJqdGkiOiI5MWJhM2M1NC0yODc4LTRmN2MtOThjOC1iZDg4ZmRhNjc3YmQiLCJleHAiOjE2MDk5NTUyODEsImlzcyI6ImdlcmlyLmNvbS5iciIsImF1ZCI6ImdlcmlyLmNvbS5iciJ9.ggaDJMoqgCC65ugbCkCr5WINq1mwyRRHkCA1c9YJQME",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Test da Silva\",\r\n    \"email\": \"test@gmail.com\",\r\n    \"senha\": \"123\",\r\n    \"tipo\": \"Comun\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Usuario",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete - Api/Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmYW1pbHlfbmFtZSI6IlRlc3QgZGEgU2lsdmEiLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQ29tdW4iLCJqdGkiOiI5MWJhM2M1NC0yODc4LTRmN2MtOThjOC1iZDg4ZmRhNjc3YmQiLCJleHAiOjE2MDk5NjIzNTMsImlzcyI6ImdlcmlyLmNvbS5iciIsImF1ZCI6ImdlcmlyLmNvbS5iciJ9.pzERb9NmS9r4MYm8PRwfjMjnPAZcVO18xS91USrM-Ss",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"cb162efd-7b1e-431a-8313-da58632c93ec\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Usuario",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Usuario"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tarefa",
+			"item": [
+				{
+					"name": "Post - Api/Tarefa/Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\" : \"Tarefa 1\",\r\n    \"descricao\" : \"Lorem ipsum dolor sit amet.\",\r\n    \"categoria\" : \"Pessoal\",\r\n    \"DataEntrega\" : \"2021-01-05 11:30:00\",\r\n    \"status\" : 1,\r\n    \"usuarioId\": \"91ba3c54-2878-4f7c-98c8-bd88fda677bd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/tarefa",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tarefa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get - Api/Tarefa/Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/Tarefa",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Tarefa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put - Api/Tarefa/Editar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmYW1pbHlfbmFtZSI6IlRlc3QgZGEgU2lsdmEiLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQ29tdW4iLCJqdGkiOiI5MWJhM2M1NC0yODc4LTRmN2MtOThjOC1iZDg4ZmRhNjc3YmQiLCJleHAiOjE2MTAwMjExMTgsImlzcyI6ImdlcmlyLmNvbS5iciIsImF1ZCI6ImdlcmlyLmNvbS5iciJ9.qdpsz7-W1g6v6b3AHC99vDtJ-Rhlrh-t9ITaibegCaA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"3C02D076-EE47-49CC-86D6-9EA57859121E\",\r\n    \"titulo\" : \"Tarefa 1.5\",\r\n    \"descricao\" : \"Lorem ipsum dolor sit amet.\",\r\n    \"categoria\" : \"teste\",\r\n    \"DataEntrega\" : \"2021-01-05 11:30:00\",\r\n    \"status\" : 1,\r\n    \"usuarioId\" : \"91BA3C54-2878-4F7C-98C8-BD88FDA677BD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Tarefa",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Tarefa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get - Api/Tarefa/Buscar/{ID}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmYW1pbHlfbmFtZSI6IlRlc3QgZGEgU2lsdmEiLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQ29tdW4iLCJqdGkiOiI5MWJhM2M1NC0yODc4LTRmN2MtOThjOC1iZDg4ZmRhNjc3YmQiLCJleHAiOjE2MTAwMjExMTgsImlzcyI6ImdlcmlyLmNvbS5iciIsImF1ZCI6ImdlcmlyLmNvbS5iciJ9.qdpsz7-W1g6v6b3AHC99vDtJ-Rhlrh-t9ITaibegCaA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Tarefa/Buscar/251f3235-af3f-4073-8176-8f251a7b887c",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Tarefa",
+								"Buscar",
+								"251f3235-af3f-4073-8176-8f251a7b887c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete - Api/Tarefa/Excluir",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmYW1pbHlfbmFtZSI6IlRlc3QgZGEgU2lsdmEiLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQ29tdW4iLCJqdGkiOiI5MWJhM2M1NC0yODc4LTRmN2MtOThjOC1iZDg4ZmRhNjc3YmQiLCJleHAiOjE2MTAwMjExMTgsImlzcyI6ImdlcmlyLmNvbS5iciIsImF1ZCI6ImdlcmlyLmNvbS5iciJ9.qdpsz7-W1g6v6b3AHC99vDtJ-Rhlrh-t9ITaibegCaA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"00000000-0000-0000-0000-000000000000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Tarefa",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Tarefa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put - Api/Tarefa/AlterarStatus/{ID}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmYW1pbHlfbmFtZSI6IlRlc3QgZGEgU2lsdmEiLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQ29tdW4iLCJqdGkiOiI5MWJhM2M1NC0yODc4LTRmN2MtOThjOC1iZDg4ZmRhNjc3YmQiLCJleHAiOjE2MTAwMjExMTgsImlzcyI6ImdlcmlyLmNvbS5iciIsImF1ZCI6ImdlcmlyLmNvbS5iciJ9.qdpsz7-W1g6v6b3AHC99vDtJ-Rhlrh-t9ITaibegCaA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/Tarefa/AlterarStatus/251F3235-AF3F-4073-8176-8F251A7B887C",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Tarefa",
+								"AlterarStatus",
+								"251F3235-AF3F-4073-8176-8F251A7B887C"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:5000/api"
+		}
+	]
+}

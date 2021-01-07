@@ -21,8 +21,8 @@ namespace Senai.Gerir.Api.Repositorios
         {
             try
             {
-                //Busca a tarefa no BD
-                Tarefa tarefaExiste = BuscarPorId(idTarefa);
+                //Busca a tarefa no BD a partir de seu id
+                var tarefaExiste = BuscarPorId(idTarefa);
 
                 //Verifica se a tarefa realmente existe
 
@@ -32,9 +32,10 @@ namespace Senai.Gerir.Api.Repositorios
                 //Altera os valores da tarefa
                 tarefaExiste.Status = !tarefaExiste.Status;
 
-
+                // Edita ela
                 _context.Tarefas.Update(tarefaExiste);
 
+                // E salva
                 _context.SaveChanges();
 
                 return tarefaExiste;
@@ -66,7 +67,6 @@ namespace Senai.Gerir.Api.Repositorios
         {
             try
             {
-
                 //Responsável por adicionar a tarefa no DBset Tarefas do contexto 
                 _context.Tarefas.Add(tarefa);
                 //Salva as alterações feitas no contexto(context)
@@ -76,7 +76,6 @@ namespace Senai.Gerir.Api.Repositorios
             }
             catch (Exception ex)
             {
-
                 throw new Exception(ex.Message);
             }
         }
@@ -99,11 +98,11 @@ namespace Senai.Gerir.Api.Repositorios
                 tarefaExiste.Descricao = tarefa.Descricao;
                 tarefaExiste.Categoria = tarefa.Categoria;
                 tarefaExiste.DataEntrega = tarefa.DataEntrega;
-                tarefaExiste.UsuarioId = tarefa.UsuarioId;
 
 
+                // Edita os valores
                 _context.Tarefas.Update(tarefaExiste);
-
+                // Salva o que foi editado/alterado
                 _context.SaveChanges();
 
                 return tarefaExiste;
@@ -121,8 +120,10 @@ namespace Senai.Gerir.Api.Repositorios
             try
             {
 
+                //
+                var tarefas = _context.Tarefas.Where(c => c.UsuarioId == idUsuario).ToList();
 
-                return _context.Tarefas.ToList();
+                return tarefas;
             }
             catch (Exception ex)
             {
