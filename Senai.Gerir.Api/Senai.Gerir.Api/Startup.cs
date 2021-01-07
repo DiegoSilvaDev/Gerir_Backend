@@ -58,6 +58,16 @@ namespace Senai.Gerir.Api
                     };
                 });
 
+            //Adiciona o cors a Api
+            services.AddCors(options => 
+            {
+                //Adiciona uma política de Cors
+                options.AddPolicy("PoliticaCors",
+                    builder => builder.AllowAnyOrigin() //Acesso a toda origem
+                                      .AllowAnyMethod() //Acesso a todos os métodos
+                                      .AllowAnyHeader() //Acesso a todos os Headers
+                    );
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -72,10 +82,12 @@ namespace Senai.Gerir.Api
                 app.UseHttpsRedirection();
 
                 app.UseRouting();
-
+            
                 app.UseAuthentication();
 
                 app.UseAuthorization();
+
+                app.UseCors("PoliticaCors");
 
                 app.UseEndpoints(endpoints =>
                 {
