@@ -61,7 +61,7 @@ namespace Senai.Gerir.Api.Controllers
 
                 var tarefas = _tarefaRepositorio.ListarTodas(new Guid(usuarioId.Value));
 
-                return Ok(tarefas);
+                return Ok(new { data = tarefas });
             }
             catch (Exception ex)
             {
